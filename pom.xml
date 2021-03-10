@@ -31,9 +31,9 @@
   <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina -->
   <dependencies>
     <dependency>
-      <groupId>org.apache.tomcat</groupId>
-      <artifactId>tomcat-catalina</artifactId>
-      <version>8.5.63</version>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
