@@ -60,6 +60,7 @@
                 alert("提交成功")
                 return true;
             }
+            alert("提交失败")
             return false;
         }
     </script>
