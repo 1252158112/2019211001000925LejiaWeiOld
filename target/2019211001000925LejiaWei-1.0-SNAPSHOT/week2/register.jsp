@@ -55,19 +55,27 @@
             document.getElementById("birth").style.color="green";
             return true;
         }
+        function checkAll() {
+            if(isDateValid()&&isMailValid()&&isPasswordValid()&&document.getElementById("userName").value!=null&&document.getElementById("sex").value!=null) {
+                alert("提交成功")
+                return true;
+            }
+            alert("提交失败")
+            return false;
+        }
     </script>
 </head>
 <body>
 
 <h1>New User Registration!</h1>
 <form action="" method="post">
-    Username:<input type="text" name="userName"><br>
+    Username:<input type="text" id="userName"><br>
     Password:<input type="password" id="psw" name="password" onchange="isPasswordValid()"><br>
     E-mail:<input type="email" id="mail" name="email" onchange="isMailValid()"><br>
     Gender:<input type="radio" name="sex" value="male">male
     <input type="radio" name="sex" value="female">female<br>
     Birth:<input type="text" id="birth" onchange="isDateValid()"><br>
-    <input type="submit" value="Register">
+    <input type="submit" value="Register"  onclick="checkAll()">
 </form>
 </body>
 </html>
