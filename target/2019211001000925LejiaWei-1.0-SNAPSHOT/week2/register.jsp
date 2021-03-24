@@ -68,14 +68,14 @@
 <body>
 
 <h1>New User Registration!</h1>
-<form action="" method="post">
-    Username:<input type="text" id="userName"><br>
+<form action="../register" method="post" onsubmit="checkAll()">
+    Username:<input type="text" id="username" name="username"><br>
     Password:<input type="password" id="psw" name="password" onchange="isPasswordValid()"><br>
     E-mail:<input type="email" id="mail" name="email" onchange="isMailValid()"><br>
     Gender:<input type="radio" name="sex" value="male">male
     <input type="radio" name="sex" value="female">female<br>
-    Birth:<input type="text" id="birth" onchange="isDateValid()"><br>
-    <input type="submit" value="Register"  onclick="checkAll()">
+    Birth:<input type="text" id="birth" name="birth" onchange="isDateValid()"><br>
+    <input type="submit" value="Register">
 </form>
 </body>
 </html>
