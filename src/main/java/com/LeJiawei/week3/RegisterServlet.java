@@ -62,8 +62,9 @@ public class RegisterServlet extends HttpServlet {
             System.out.println(e);
         }
         writer.println("<table border=\"1\">");
+        writer.println("<tr><td>ID</td><td>UserName</td><td>Password</td><td>Email</td><td>Gender</td><td>Birthdate</td></tr>");
         for(int i=0;i<cnt;i++) {
-            writer.println("<tr>");
+            writer.println("<tr><td>"+(i+1)+"</td>");
             for(int j=0;j<5;j++) {
                 writer.println("<td>"+ret[i][j]+"</td>");
             }
