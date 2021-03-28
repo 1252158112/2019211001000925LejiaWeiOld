@@ -46,7 +46,7 @@ public class RegisterServlet extends HttpServlet {
         try {
 //            System.out.println("try cn");
             Statement createDbStatement = dbConn.createStatement();
-            String dbRequire1="insert into usertable values('"+username+"','"+password+"','"+mail+"','"+sex+"','"+birth+"')";
+            String dbRequire1="insert into usertable(username,password,mail,sex,birth) values('"+username+"','"+password+"','"+mail+"','"+sex+"','"+birth+"')";
 //            System.out.println(dbRequire1);
             createDbStatement.executeUpdate(dbRequire1);
             String dbRequire="select * from usertable";
@@ -56,7 +56,8 @@ public class RegisterServlet extends HttpServlet {
                 ret[cnt][1]=resultDb.getObject(2).toString().trim();
                 ret[cnt][2]=resultDb.getObject(3).toString().trim();
                 ret[cnt][3]=resultDb.getObject(4).toString().trim();
-                ret[cnt++][4]=resultDb.getObject(5).toString().trim();
+                ret[cnt][4]=resultDb.getObject(5).toString().trim();
+                ret[cnt++][5]=resultDb.getObject(6).toString().trim();
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -64,8 +65,7 @@ public class RegisterServlet extends HttpServlet {
         writer.println("<table border=\"1\">");
         writer.println("<tr><td>ID</td><td>UserName</td><td>Password</td><td>Email</td><td>Gender</td><td>Birthdate</td></tr>");
         for(int i=0;i<cnt;i++) {
-            writer.println("<tr><td>"+(i+1)+"</td>");
-            for(int j=0;j<5;j++) {
+            for(int j=0;j<6;j++) {
                 writer.println("<td>"+ret[i][j]+"</td>");
             }
             writer.println("</tr>");
@@ -73,3 +73,4 @@ public class RegisterServlet extends HttpServlet {
         writer.println("</table>");
     }
 }
+
