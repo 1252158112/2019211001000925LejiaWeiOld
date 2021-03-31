@@ -7,11 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>home</title>
-</head>
+<h2>welcome to my home page</h2>
+<%@include file="header.jsp"%>
 <body>
 <a href="hello">code1<br></a>
 <a href="week2/register.jsp">code2<br></a>
+<a href="MyJsp.jsp">code3<br></a>
+<a href="login.jsp">login<br></a>
 </body>
 </html>
+<%@include file="footer.jsp"%>

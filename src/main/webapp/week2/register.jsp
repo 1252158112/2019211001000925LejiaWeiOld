@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<%@include file="../header.jsp" %>
 <head>
     <title>register</title>
     <script>
@@ -66,7 +67,7 @@
     </script>
 </head>
 <body>
-
+<br>This is my register page
 <h1>New User Registration!</h1>
 <form action="../register" method="post" onsubmit="checkAll()">
     Username:<input type="text" id="username" name="username"><br>
@@ -79,4 +80,5 @@
 </form>
 </body>
 </html>
+<%@ include file="../footer.jsp"%>
 

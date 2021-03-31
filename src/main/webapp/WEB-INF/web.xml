@@ -39,7 +39,10 @@
 <!--      <param-value>2019211001000925</param-value>-->
 <!--    </init-param>-->
 <!--  </servlet>-->
-
+<!--  <servlet>-->
+<!--    <servlet-name>ConfigDemoServlet</servlet-name>-->
+<!--    <servlet-class>com.LeJiawei.week4.ConfigDemoServlet</servlet-class>-->
+<!--  </servlet>-->
 <!--  <servlet-mapping>-->
 <!--    <servlet-name>ConfigDemoServlet</servlet-name>-->
 <!--    <url-pattern>/config</url-pattern>-->
