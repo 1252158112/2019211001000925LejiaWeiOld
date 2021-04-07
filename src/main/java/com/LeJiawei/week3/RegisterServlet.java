@@ -62,15 +62,16 @@ public class RegisterServlet extends HttpServlet {
         } catch (Exception e) {
             System.out.println(e);
         }
-        writer.println("<table border=\"1\">");
-        writer.println("<tr><td>ID</td><td>UserName</td><td>Password</td><td>Email</td><td>Gender</td><td>Birthdate</td></tr>");
-        for(int i=0;i<cnt;i++) {
-            for(int j=0;j<6;j++) {
-                writer.println("<td>"+ret[i][j]+"</td>");
-            }
-            writer.println("</tr>");
-        }
-        writer.println("</table>");
+        response.sendRedirect("login.jsp");
+//        writer.println("<table border=\"1\">");
+//        writer.println("<tr><td>ID</td><td>UserName</td><td>Password</td><td>Email</td><td>Gender</td><td>Birthdate</td></tr>");
+//        for(int i=0;i<cnt;i++) {
+//            for(int j=0;j<6;j++) {
+//                writer.println("<td>"+ret[i][j]+"</td>");
+//            }
+//            writer.println("</tr>");
+//        }
+//        writer.println("</table>");
     }
 }
 
