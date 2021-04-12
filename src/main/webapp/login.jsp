@@ -22,5 +22,4 @@
 </form>
 </body>
 <%@ include file="footer.jsp"%>
-</h
-tml>
+</html>
