@@ -9,18 +9,20 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
-@WebServlet(name = "RegisterServlet",value = "/register")
+@WebServlet(urlPatterns = {"/register"},loadOnStartup = 1)
 public class RegisterServlet extends HttpServlet {
-    public Connection dbConn;
-    public void init()  {
-        try {
-            Class.forName(getServletConfig().getServletContext().getInitParameter("driver"));
-            dbConn= DriverManager.getConnection(getServletConfig().getServletContext().getInitParameter("url"),getServletConfig().getServletContext().getInitParameter("Username"),getServletConfig().getServletContext().getInitParameter("Password"));
-            System.out.println(dbConn);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+    public Connection dbConn=null;
+    @Override
+    public void init() throws ServletException {
+        super.init();
+//        try {
+//            Class.forName(getServletConfig().getServletContext().getInitParameter("driver"));
+//            dbConn= DriverManager.getConnection(getServletConfig().getServletContext().getInitParameter("url"),getServletConfig().getServletContext().getInitParameter("Username"),getServletConfig().getServletContext().getInitParameter("Password"));
+//            System.out.println(dbConn);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+        dbConn=(Connection)getServletContext().getAttribute("con");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
