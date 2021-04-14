@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSessionBindingEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
+@WebListener
 public class JDBCServletContextListener implements ServletContextListener{
     public Connection dbConn;
     public void contextInitialized(ServletContextEvent sce) {
@@ -34,11 +34,7 @@ public class JDBCServletContextListener implements ServletContextListener{
          (the Web application) is undeployed or 
          Application Server shuts down.
       */
-        try {
-            dbConn.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        sce.getServletContext().removeAttribute("con");
     }
 
 }
