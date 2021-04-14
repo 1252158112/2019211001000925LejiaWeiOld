@@ -7,11 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<%@include file="WEB-INF/views/header.jsp"%>>
+<%@include file="header.jsp"%>
 <body>
 <h2>Login</h2>
 <%
-    if(!(request.getAttribute("message")==null)) {
+    if((request.getAttribute("message")!=null)) {
         out.print("<h3>"+request.getAttribute("message")+"<h3>");
     }
 %>
@@ -21,5 +21,5 @@
     <input type="submit" value="login">
 </form>
 </body>
-<%@ include file="WEB-INF/views/footer.jsp"%>
+<%@ include file="footer.jsp"%>
 </html>

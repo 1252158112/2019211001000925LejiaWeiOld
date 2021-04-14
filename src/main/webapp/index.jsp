@@ -20,9 +20,9 @@
     <input type="submit" value="Search">
 </form>
 <a href="hello">code1<br></a>
-<a href="week2/register.jsp">code2<br></a>
-<a href="MyJsp.jsp">code3<br></a>
-<a href="login.jsp">login<br></a>
+<a href="../../week2/register.jsp">code2<br></a>
+<a href="../../MyJsp.jsp">code3<br></a>
+<a href="../../login.jsp">login<br></a>
 </body>
 </html>
 <%@include file="footer.jsp"%>
