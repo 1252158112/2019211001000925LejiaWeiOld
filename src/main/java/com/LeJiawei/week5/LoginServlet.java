@@ -62,7 +62,7 @@ public class LoginServlet extends HttpServlet {
                 req.setAttribute("message","username or Password Error!!!");
                 req.getRequestDispatcher("WEB-INF/views/login.jsp").forward(req,resp);
             }
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.out.println(e);
         }
 //        Statement createDbStatement = null;
