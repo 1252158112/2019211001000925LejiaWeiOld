@@ -14,12 +14,14 @@ import java.lang.ref.ReferenceQueue;
 @WebServlet(name = "AdminHomeServlet",value ="/admin/home" )
 public class AdminHomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        System.out.println("1");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("2");
         HttpSession session =request.getSession(false);
         if(session!=null&&session.getAttribute("user")!=null) {
+            System.out.println("1");
             User user=(User) session.getAttribute("user");
             System.out.println(user.getUsername());
             if("admin".equals(user.getUsername().trim())) {
@@ -32,6 +34,7 @@ public class AdminHomeServlet extends HttpServlet {
             }
         }
         else {
+            System.out.println("2");
             request.setAttribute("message","Please login as admin!");
             request.getRequestDispatcher("../WEB-INF/views/login.jsp").forward(request,response);
         }
