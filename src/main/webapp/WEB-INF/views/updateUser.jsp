@@ -8,6 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <%@include file="header.jsp" %>
+<%
+    User u= (User) session.getAttribute("user");
+%>
 <head>
     <title>register</title>
     <script>
@@ -69,13 +72,13 @@
 <body>
 <h1>User update!</h1>
 <form action="updateUser" method="post" onsubmit="checkAll()">
-    <input type="hidden" id="id" name="id" value="<%=user.getId()%>">
-    Username:<input type="text" id="username" name="username" value="<%=user.getUsername()%>"><br>
-    Password:<input type="text" id="psw" name="password" onchange="isPasswordValid()" value="<%=user.getPassword()%>"><br>
-    E-mail:<input type="email" id="mail" name="email" onchange="isMailValid()" value="<%=user.getEmail()%>"><br>
-    Gender:<input type="radio" name="sex" value="male" <%=user.getGender().trim().equals("male")?"checked":""%>>male
-    <input type="radio" name="sex" value="female" <%=user.getGender().trim().equals("female")?"checked":""%>>female<br>
-    Birth:<input type="text" id="birth" name="birth" onchange="isDateValid()" value="<%=user.getBirth()%>"><br>
+    <input type="hidden" id="id" name="id" value="<%=u.getId()%>">
+    Username:<input type="text" id="username" name="username" value="<%=u.getUsername()%>"><br>
+    Password:<input type="text" id="psw" name="password" onchange="isPasswordValid()" value="<%=u.getPassword()%>"><br>
+    E-mail:<input type="email" id="mail" name="email" onchange="isMailValid()" value="<%=u.getEmail()%>"><br>
+    Gender:<input type="radio" name="sex" value="male" <%=u.getGender().trim().equals("male")?"checked":""%>>male
+    <input type="radio" name="sex" value="female" <%=u.getGender().trim().equals("female")?"checked":""%>>female<br>
+    Birth:<input type="text" id="birth" name="birth" onchange="isDateValid()" value="<%=u.getBirth()%>"><br>
     <input type="submit" value="Update">
 </form>
 </body>

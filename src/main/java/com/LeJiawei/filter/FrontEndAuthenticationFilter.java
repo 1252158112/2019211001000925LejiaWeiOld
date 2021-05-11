@@ -24,7 +24,7 @@ public class FrontEndAuthenticationFilter implements Filter {
             return;
         }
         HttpSession session=httpRequest.getSession(false);
-        boolean isLoggedIn=(session != null && session.getAttribute("userList") != null);
+        boolean isLoggedIn=(session != null && session.getAttribute("user") != null);
         String loginURI = httpRequest.getContextPath()+"/login";
         boolean isLoginRequest =httpRequest.getRequestURI().equals(loginURI);
         boolean isLoginPage=httpRequest.getRequestURI().endsWith("login");
