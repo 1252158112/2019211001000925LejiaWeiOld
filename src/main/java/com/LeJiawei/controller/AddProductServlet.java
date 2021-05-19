@@ -54,7 +54,7 @@ public class AddProductServlet extends HttpServlet {
         List<Category> categoryList= null;
         try {
             categoryList = category.findAllCategory(con);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         request.setAttribute("categoryList",categoryList);

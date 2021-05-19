@@ -57,15 +57,17 @@ public class Category {
     public void setActive(Boolean active) {
         this.active = active;
     }
-    public List<Category> findAllCategory(Connection con) throws SQLException {
+
+    public static List<Category> findAllCategory(Connection con) {
         String dbRequire="select * from Category";
         List<Category> list=new ArrayList<Category>();
         try{
             PreparedStatement st=con.prepareStatement(dbRequire);
             ResultSet resultDb=st.executeQuery();
-            if(resultDb.next()) {
+            while(resultDb.next()) {
                 Category c=new Category();
                 c.setCategoryId(resultDb.getInt("CategoryId"));
+                System.out.println(resultDb.getInt("CategoryId"));
                 c.setCategoryName(resultDb.getString("CategoryName"));
                 c.setDescription(resultDb.getString("Description"));
                 list.add(c);
