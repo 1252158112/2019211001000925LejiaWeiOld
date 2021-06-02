@@ -16,7 +16,7 @@
 <%--<%=request.getAttribute("message")%>--%>
 <c:out value="${sessionScope.message}"/>
 <%--todo 1: use c:url to set url in action="validate.jsp" --%>
-<c:url value="lab1/assignment2/validate.jsp" var="check"/>
+<c:url value="/lab1/assignment2/validate.jsp" var="check"/>
 <form action="${check}">
     Username : <input type="text" name="username"><br>
     Password : <input type="password" name="password"><br>
