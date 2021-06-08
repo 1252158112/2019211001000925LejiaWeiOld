@@ -27,6 +27,15 @@
     <servlet-name>fstServlet</servlet-name>
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
+
+  <filter>
+    <filter-name>namefilter</filter-name>
+    <filter-class>com.lab2.YourNameFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>namefilter</filter-name>
+    <url-pattern>/lab2/welcome.jsp</url-pattern>
+  </filter-mapping>
 <!--  <servlet>-->
 <!--    <servlet-name>ConfigDemoServlet</servlet-name>-->
 <!--    <servlet-class>com.LeJiawei.week4.ConfigDemoServlet</servlet-class>-->
