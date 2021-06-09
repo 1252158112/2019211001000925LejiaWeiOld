@@ -16,6 +16,7 @@ public class LoginFilter implements Filter {
         System.out.println("i am in LoginFilter--doFilter()-- request before chain()");
         HttpServletRequest req=(HttpServletRequest) request;
         HttpServletResponse res=(HttpServletResponse) response;
+        System.out.println(req.getSession(false));
         if(req.getSession(false).isNew()) {
             RequestDispatcher dispatcher=request.getRequestDispatcher("welcome.jsp");
             dispatcher.forward(req,res);
